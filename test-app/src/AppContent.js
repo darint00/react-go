@@ -4,6 +4,15 @@ import React, {Component} from "react";
 
 export default class AppContent extends Component{
 
+   anotherFunction = () => {
+      console.log("anotherFunction");
+   }
+
+   leftParagraph = () => {
+      console.log("left paragraph");
+   }
+
+   
 
    fetchList = () => {
       fetch('https://jsonplaceholder.typicode.com/posts')
@@ -25,6 +34,9 @@ export default class AppContent extends Component{
       return (
             <p>This is the Content
                <br/>
+               <hr />
+               <p onMouseEnter={this.anotherFunction} onMouseLeave={this.leftParagraph}>This is some text</p>
+               <!--
                <button onClick={this.fetchList} className="btn btn-primary ">Fetch Data</button>
 
                <ul id="post-list"></ul>
